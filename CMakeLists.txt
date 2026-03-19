@@ -5,3 +5,23 @@ project(NitroNeverClear VERSION 1.0.0 LANGUAGES ASM_NASM)
 file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS src/*.asm)
 
 add_executable(${PROJECT_NAME} ${SOURCES})
+
+target_include_directories(${PROJECT_NAME} PRIVATE
+	src/
+)
+
+
+# add extra flags here
+set(SETTINGS "\"settings\": {\n\"nasm.extraFlags\": [\"-w+all\",")
+get_target_property(INCLUDE_DIRS ${PROJECT_NAME} INCLUDE_DIRECTORIES)
+
+foreach(DIR ${INCLUDE_DIRS})
+    string(APPEND SETTINGS "\"-I${DIR}\",")
+endforeach()
+
+string(APPEND SETTINGS "]\n}\n}")
+
+file(GLOB WORKSPACE_FILE *.code-workspace)
+file(READ "${WORKSPACE_FILE}" FILE_CONTENTS)
+string(REGEX REPLACE "\"settings\": {.*}" "${SETTINGS}" FILE_CONTENTS "${FILE_CONTENTS}")
+file(WRITE "${WORKSPACE_FILE}" "${FILE_CONTENTS}")
