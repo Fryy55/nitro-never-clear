@@ -7,14 +7,22 @@ file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS src/*.asm)
 add_executable(${PROJECT_NAME} ${SOURCES})
 
 target_include_directories(${PROJECT_NAME} PRIVATE
-    src/
+    src/macros
+    src/utils
 )
-
+target_compile_options(${PROJECT_NAME} PRIVATE
+    -w+all
+    -w-reloc
+)
+target_link_options(${PROJECT_NAME} PRIVATE
+    -z noexecstack
+    -s
+)
 
 # add extra settings/flags here
 set(SETTINGS
     [["settings": {
-        "nasm.extraFlags": ["-w+all", "-I]]
+        "nasm.extraFlags": ["-w+all", "-w-reloc", "-I]]
 )
 get_target_property(INCLUDE_DIRS ${PROJECT_NAME} INCLUDE_DIRECTORIES)
 
