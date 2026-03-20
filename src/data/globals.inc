@@ -4,6 +4,7 @@
 
 extern prompt
 extern promptLen
+extern key
 
 
 %endif ; GLOBALS_INC

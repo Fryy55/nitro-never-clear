@@ -3,6 +3,8 @@ target_compile_options(${PROJECT_NAME} PRIVATE ${NASM_FLAGS})
 target_link_options(${PROJECT_NAME} PRIVATE
     -z noexecstack
     -s
+    --fatal-warnings
+    --warn-common
 )
 
 get_target_property(INCLUDE_DIRS ${PROJECT_NAME} INCLUDE_DIRECTORIES)

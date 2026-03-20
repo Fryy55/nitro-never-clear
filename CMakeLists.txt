@@ -9,6 +9,7 @@ add_executable(${PROJECT_NAME} ${SOURCES})
 target_include_directories(${PROJECT_NAME} PRIVATE
     src/macros
     src/data
+    src/utils
 )
 
 # add extra flags and settings here
