@@ -1,0 +1,17 @@
+%ifndef STRING_MAC
+%define STRING_MAC
+
+
+%macro string 2+
+	%1 db %2
+	%{1}Len equ $ - %1
+%endmacro
+
+%macro string_global 2+
+	string %1, %2
+	global %1
+	global %{1}Len
+%endmacro
+
+
+%endif ; STRING_MAC
