@@ -1,7 +1,7 @@
 section .text
-	global readKey
+	global flushFD0
 
-readKey: ; () LEAF
+flushFD0: ; () LEAF
 	
 
 	ret
