@@ -6,5 +6,7 @@ extern prompt
 extern promptLen
 extern key
 
+; local exposed labels
+extern exit
 
 %endif ; GLOBALS_INC

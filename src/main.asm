@@ -1,4 +1,5 @@
 %include "globals.inc"
+%include "readKey.inc"
 
 %include "string.mac"
 
@@ -11,19 +12,20 @@ section .text
 	global _start
 
 _start: ; ()
-	mov rdi, 1
+	mov edi, 1
 	mov rsi, greeting
-	mov rdx, greetingLen
-	mov rax, 1 ; write
+	mov edx, greetingLen
+	mov eax, 1 ; write
 	syscall
 
 	mov rsi, prompt
-	mov rdx, promptLen
-	mov rax, 1 ; write
+	mov edx, promptLen
+	mov eax, 1 ; write
 	syscall
 
-	;! TODO: read key
+	call readKey
 
+	exit: global exit
 	xor rdi, rdi
-	mov rax, 60 ; exit
+	mov eax, 60 ; exit
 	syscall
