@@ -1,8 +1,9 @@
 %include "string.mac"
+%include "ansi.mac"
 
 
 section .rodata
-	string critErrorMsg, "A critical error has occurred!", 0xa
+	string critErrorMsg, ansi("1;31"), "A critical error has occurred!", ansi("0"), 0xa
 
 
 section .text

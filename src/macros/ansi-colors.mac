@@ -1,0 +1,45 @@
+%ifndef ANSI_COLORS_MAC
+%define ANSI_COLORS_MAC
+
+
+%include "ansi.mac"
+
+
+%define BLK ansi("0;30"),
+%define BLK_B ansi("0;1;30"),
+%define RED ansi("0;31"),
+%define RED_B ansi("0;1;31"),
+%define GRN ansi("0;32"),
+%define GRN_B ansi("0;1;32"),
+%define YLW ansi("0;33"),
+%define YLW_B ansi("0;1;33"),
+%define BLU ansi("0;34"),
+%define BLU_B ansi("0;1;34"),
+%define PUR ansi("0;35"),
+%define PUR_B ansi("0;1;35"),
+%define CYN ansi("0;36"),
+%define CYN_B ansi("0;1;36"),
+%define WHT ansi("0;37"),
+%define WHT_B ansi("0;1;37"),
+
+%define BLK_L ansi("0;90"),
+%define BLK_LB ansi("0;1;90"),
+%define RED_L ansi("0;91"),
+%define RED_LB ansi("0;1;91"),
+%define GRN_L ansi("0;92"),
+%define GRN_LB ansi("0;1;92"),
+%define YLW_L ansi("0;93"),
+%define YLW_LB ansi("0;1;93"),
+%define BLU_L ansi("0;94"),
+%define BLU_LB ansi("0;1;94"),
+%define PUR_L ansi("0;95"),
+%define PUR_LB ansi("0;1;95"),
+%define CYN_L ansi("0;96"),
+%define CYN_LB ansi("0;1;96"),
+%define WHT_L ansi("0;97"),
+%define WHT_LB ansi("0;1;97"),
+
+%define RST ansi("0")
+
+
+%endif ; ANSI_COLORS_MAC

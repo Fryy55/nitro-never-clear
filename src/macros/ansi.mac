@@ -1,0 +1,8 @@
+%ifndef ANSI_MAC
+%define ANSI_MAC
+
+
+%define ansi(s) 0x1b, "[", s, "m"
+
+
+%endif ; ANSI_MAC

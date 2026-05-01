@@ -2,10 +2,11 @@
 %include "readKey.inc"
 
 %include "string.mac"
+%include "ansi-colors.mac"
 
 
 section .rodata
-	string greeting, "Haii and welcome to a xor guessing (more like brute forcing) thingy !", 0xa
+	string greeting, BLU_B"Haii and welcome to a xor guessing ", BLK_L"(more like brute forcing) ", BLU_B"thingy !", 0xa
 	data db 80, 99, 4, 18, 121, 86, 52, 8, 76, 69, 39, 31, 118, 89, 37, 12, 97, 68, 29, 8, 96, 68, 39, 4, 113, 91, 39, 20
 
 section .text

@@ -13,7 +13,8 @@ readKey: ; ()
 	syscall
 
 	test rax, rax
-	js exit
+	js critError
 	jz critError
+	jmp critError
 
 	ret
