@@ -19,11 +19,6 @@ _start: ; ()
 	mov eax, 1 ; write
 	syscall
 
-	mov rsi, prompt
-	mov edx, promptLen
-	mov eax, 1 ; write
-	syscall
-
 	call readKey
 
 	exit: global exit
