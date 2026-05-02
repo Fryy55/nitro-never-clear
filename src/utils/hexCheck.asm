@@ -1,0 +1,20 @@
+section .text
+	global hexCheck
+
+hexCheck: ; (rdi byteToCheck) LEAF -> LSB bool
+	xor eax, eax
+
+	cmp edi, 57
+	jle le_57
+
+	cmp edi, 102
+	jle le_102
+	ret
+le_57:
+	cmp edi, 48
+	setge al
+	ret
+le_102:
+	cmp edi, 97
+	setge al
+	ret
