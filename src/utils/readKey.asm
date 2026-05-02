@@ -1,6 +1,7 @@
 %include "critError.inc"
 %include "globals.inc"
 %include "flushFD0.inc"
+%include "hexCheck.inc"
 
 %include "string.mac"
 %include "ansi-colors.mac"
@@ -41,7 +42,22 @@ readKey: ; ()
 	cmp byte [rsp + rax - 1], 0xa
 	jne reread
 
-	
+	xor ecx, ecx
+	parse:
+	mov edi, [rsp + rcx]
+	call hexCheck
+	test eax, eax
+	jz read
+
+	mov edi, [rsp + rcx + 1]
+	call hexCheck
+	test eax, eax
+	jz read
+
+
+	add ecx, 3
+	cmp ecx, bufSize
+	jne parse
 
 	mov rsp, rbp
 	pop rbp

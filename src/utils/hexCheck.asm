@@ -1,8 +1,9 @@
 section .text
 	global hexCheck
 
-hexCheck: ; (rdi byteToCheck) LEAF -> LSB bool
+hexCheck: ; (rdi nonStrippedByteToCheck) LEAF -> LSB bool
 	xor eax, eax
+	movzx edi, dil
 
 	cmp edi, 57
 	jle le_57
