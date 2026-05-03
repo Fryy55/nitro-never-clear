@@ -43,19 +43,23 @@ readKey: ; ()
 	jne reread
 
 	xor ecx, ecx
+	xor r8d, r8d
 	parse:
 	mov edi, [rsp + rcx]
 	call hexCheck
 	test eax, eax
 	jz read
+	mov [key + r8d], dil
+	shl byte [key + r8d], 4
 
 	mov edi, [rsp + rcx + 1]
 	call hexCheck
 	test eax, eax
 	jz read
-
+	or [key + r8d], dil
 
 	add ecx, 3
+	inc r8d
 	cmp ecx, bufSize
 	jne parse
 
