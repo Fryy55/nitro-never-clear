@@ -19,5 +19,5 @@ le_57:
 le_102:
 	cmp edi, 97
 	setge al
-	sub dil, 97
+	sub dil, 87
 	ret
