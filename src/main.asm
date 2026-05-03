@@ -11,7 +11,7 @@ section .rodata
 	string closure, RST, 0xa, BLU_B"Did u get it? idk :gladstare:", RST, 0xa
 
 section .data
-	data db 80, 99, 4, 18, 121, 86, 52, 8, 76, 69, 39, 31, 118, 89, 37, 12, 97, 68, 29, 8, 96, 68, 39, 4, 113, 91, 39, 20
+	data db 37, 11, 127, 128, 56, 15, 127, 214, 114, 56, 112, 158, 119, 19, 108, 215, 28, 18, 105, 146, 28, 81, 41, 209, 116, 81, 41, 154
 	dataSize equ $ - data
 
 section .text
